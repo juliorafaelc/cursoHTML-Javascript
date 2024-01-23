@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+//exercicio 1 - Crie um contador que comece em 1 e vá até 10 usando um loop while. Mostre cada número.
+var contador1 = 1;
+while(contador1 <= 10){
+  document.write(contador1 + "<br>");
+  contador1++;
+}
+document.write("<br><br>");
+
+//exercicio 2 - Crie um contador que começa em 10 e vá até 0 usando um loop while. Mostre cada número.
+var contador2 = 10;
+while(contador2 >= 0){
+  document.write(contador2 + "<br>");
+  contador2 = contador2 - 1;
+}
+document.write("<br><br>");
+
+//exercicio 3 - Crie um programa de contagem regressiva. Peça um número e conte deste número até 0, usando um loop while no console do navegador.
+var contagemRegressiva = parseInt(prompt("digite o numero da contagem regressiva"));
+
+while(contagemRegressiva > 0){
+  document.write(contagemRegressiva + " ");
+  contagemRegressiva = contagemRegressiva - 1;
+}
+document.write("<br><br>");
+
+//exercicio 4 - Crie um programa de contagem progressiva. Peça um número e conte de 0 até esse número, usando um loop while no console do navegador.
+var contagem3 = parseInt(prompt("Digite o número até o qual a contagem progressiva deve chegar"));
+var contagemProgressiva = 0;
+while (contagemProgressiva <= contagem3) {
+  document.write(contagemProgressiva + " ");
+  contagemProgressiva++;
+}
+document.write("<br><br>");
+
+</script>
