@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function pulaLinha() {
+    document.write("<br><br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+  
+  var numeroPensado = Math.round(Math.random() * 10);
+  var tentativa = 1;
+  
+  while(tentativa <= 5){
+    var chute = parseInt(prompt("Digite seu chute"));
+
+    if(chute == numeroPensado){
+      alert("Voce acertou o numero aleatorio em " + tentativa + " tentativa");
+      mostra("O numero pensado era " + numeroPensado);
+      break;
+    }
+    if(chute < numeroPensado){
+      alert("o numero aleatorio é maior, tente novamente " + tentativa + " de 5 tentativas");
+    }
+    if(chute > numeroPensado){
+      alert("o numero aleatorio é menor, tente novamente " + tentativa + " de 5 tentativas");
+    }
+    if(tentativa == 5){
+      mostra("Fim de jogo <br> O numero pensado era " + numeroPensado);
+    }
+
+    tentativa++;
+  }
+
+  mostra("<h1> Fim de Jogo </h1>");
+
+</script>

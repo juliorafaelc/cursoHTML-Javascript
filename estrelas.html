@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+
+  //o primeiro parametro de um comando for é a atribuição inicial, o segundo parametro é a condição de fechamento do loop, e o terceiro é o incremento do parametro
+  for(var linha = 1; linha <= 3; linha++){
+    for(var coluna = 1; coluna <= 10; coluna++){
+      document.write("*");
+    }
+    pulaLinha()
+  }
+
+
+
+</script>

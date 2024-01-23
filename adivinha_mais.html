@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+  //função que sorteia numeros aleatorios de 0 a 100
+  function sorteia(){
+    return Math.round(Math.random() * 100);
+  } //END OF FUNCTION sorteia
+
+  //função que armazena os numeros sorteados em um array
+  function sorteiaNumero(quantidade){
+
+    //criação o array dos numeros sorteados
+    var sorteios = [];
+
+    // criação da variavel que controla o tamanho do array de numeros sorteados
+    var tamanhoArray = 1;
+
+    //ENQUANTO o tamanho do array foe menor igual a quantidade de numeros sorteados
+    while(tamanhoArray <= quantidade){
+
+      //variavel que chama a função sorteia criando um numero aleatorio
+      var numeroAleatorio = sorteia();
+
+      //CASO o numero aleatorio gerado pelo sorteia seja DIFERENTE DE 0
+      if(numeroAleatorio !== 0){
+
+        //criação da variavel achou, para evitar repetições de numeros
+        var achou = false;
+
+        //PARA a variavel posição 0, ate que posição seja igual ao tamanho do sorteio, deve adicionar mais 1 a posição
+        for (var posicao = 0; posicao < sorteios.length; posicao++) {
+
+          //CASO o numero sorteado na posição desejada seja igual ao numero aleatorio
+          if (sorteios[posicao] == numeroAleatorio) {
+
+            //a variavel achou se torna verdadeira
+            achou = true;
+            break;
+          }
+        }
+        //CASO achou seja falso
+        if (achou == false) {
+
+          //significa que o numero sorteado não esta dentro do array, então o numero é adicionado ao array dos sorteios
+          sorteios.push(numeroAleatorio);
+
+          //somente assim, a variavel tamanhoArray pode ser aumentada
+          tamanhoArray++;
+
+        }
+      }
+    } //END OF WHILE
+
+    //retorna para o sistema o array criado por numeros aleatorios
+    return sorteios;
+  } //END OF FUNCTION sorteiaNumero
+
+  //a variavel dos numerosPensados cria um array com o parametro sendo a quantidade de valores que devem ter dentro do array
+  var numerosPensados = sorteiaNumero(10);
+
+  ///var numerosPensados = [1,3,5,7,9,11,"asd"]
+  ///var numeroPensado = Math.round(Math.random() * 10);
+  ///var numeroPensado = 5;
+
+  // captura o que esta dentro do campo input em HTML e coloca na variavel javascript
+  var input = document.querySelector("input");
+  input.focus();
+
+  //função que verifica o input do usuario para descobrir se ele colocou ou não um numero equivalente no array numerosPensados
+  function verifica() {
+    var acertou = false;
+
+    //para a variavel posição = 0, com limite ate a posição for menor que 4, adicionar um a posição a cada ciclo
+    for(var posicao = 0; posicao < numerosPensados.length; posicao++){
+
+      //o valor do input deve ser igual ao valor do numero pensado, procurando pelo array usando a variavel posição
+      if(input.value == numerosPensados[posicao]){
+        alert(" Voce Acertou :D ");
+        acertou = true;
+        break;
+      }
+    }
+    if(acertou == false){
+      alert(" Voce errou D: ");
+    }
+    
+    //limpa o campo de input depois de uma tentativa
+    input.value = "";
+
+    //coloca o foco no input deixando o usuario tentar novamente sem precisar selecionar a caixa do input
+    input.focus();
+  } //END OF FUNCTION verifica
+
+  var button = document.querySelector("button");
+
+  // faz a verificação de aperto do botão pelo usuario para proceguir com o programa
+  button.onclick = verifica;
+
+
+</script>

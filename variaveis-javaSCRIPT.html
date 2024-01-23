@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+<script>
+
+  function exibir(conteudo) {
+    document.write(conteudo);
+
+  }
+
+  function pularLinha() {
+    exibir("<br>");
+  }
+
+  var ano = 2024;
+ 
+
+  var idadeRiri = ano - 1996;
+  exibir("Riri tem " + idadeRiri + " anos");
+  pularLinha();
+
+  var idadeDrakku = ano - 1993;
+  exibir("Drakku tem " + idadeDrakku + " anos");
+  pularLinha();
+
+  var idadeRaisa = ano - 1992;
+  exibir("Raisa tem " + idadeRaisa + " anos");
+  pularLinha();
+  
+  //a atribuição var é usada somente para criar variaveis e não para modificalas
+  ano = 2023;
+  
+  exibir("ano passado foi " + ano);
+  pularLinha();
+  exibir("e 23 anos antes era o ano " + (ano - 23));
+  pularLinha();
+
+  //Math.round é uma atribuição de inteiros que arredonda o numero fracionado
+  var media = (idadeRiri + idadeDrakku + idadeRaisa) / 3;
+  exibir("a media arredondada entre as idades de Riri Drakku e Raisa é " + Math.round(media));
+  pularLinha();
+  exibir("a media real é " + media);
+  pularLinha();
+
+</script>

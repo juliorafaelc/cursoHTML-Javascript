@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function pulaLinha() {
+    document.write("<br><br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+  
+  multiplicador = 1;
+  multiplicando = parseInt(prompt("digite o numero a ser multiplicado"));
+  limiteMultiplicador = parseInt(prompt("digite ate que numero da tabuada gostaria de saber"))
+
+  while(multiplicador <= limiteMultiplicador){
+    mostra(multiplicando + "*" + multiplicador + " = " + (multiplicando * multiplicador));
+    multiplicador = multiplicador + 1;
+  }
+
+</script>

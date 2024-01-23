@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+
+  function pulaLinha() {
+    document.write("<br><br>");
+  }
+
+  function mostra(frase) {
+    document.write("<big>" + frase + "</big>");
+    pulaLinha();
+  }
+
+  var anoCopa = 1930;
+
+  while(anoCopa <= 2024){
+    mostra("O ano de " + anoCopa + " teve copa do mundo")
+    anoCopa = anoCopa + 4
+  }
+
+</script>
